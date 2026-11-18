@@ -1,0 +1,62 @@
+{
+  "id": "EURO-VIRAL-001",
+  "name": "EURO VIRAL VELOCITY FLASH",
+  "version": "1.0.0",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 15
+  },
+  "media_slots": 5,
+  "music": {
+    "source": "capcut_library",
+    "embedded": false
+  },
+  "timeline": [
+    {
+      "start": 0,
+      "end": 2,
+      "slot": 1,
+      "effect": "HOOK",
+      "transition": "NONE"
+    },
+    {
+      "start": 2,
+      "end": 5,
+      "slot": 2,
+      "effect": "ZOOM",
+      "transition": "FLASH"
+    },
+    {
+      "start": 5,
+      "end": 9,
+      "slot": 3,
+      "effect": "VELOCITY",
+      "transition": "SHAKE"
+    },
+    {
+      "start": 9,
+      "end": 12,
+      "slot": 4,
+      "effect": "FLASH_ZOOM",
+      "transition": "BLUR"
+    },
+    {
+      "start": 12,
+      "end": 15,
+      "slot": 5,
+      "effect": "CINEMATIC_END",
+      "transition": "ZOOM_OUT"
+    }
+  ],
+  "editable": {
+    "media": true,
+    "text": true,
+    "music": false
+  },
+  "export": {
+    "format": "capcut_kit",
+    "preview": true
+  }
+}
