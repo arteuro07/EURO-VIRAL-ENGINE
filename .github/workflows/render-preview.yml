@@ -1,0 +1,40 @@
+name: EURO VIRAL - Render Preview
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/render_preview.py"
+      - ".github/workflows/render-preview.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+
+      - name: Render anime phonk preview
+        run: python3 scripts/render_preview.py
+
+      - name: Check video
+        run: |
+          ffprobe -v error \
+            -show_entries format=duration \
+            -of default=noprint_wrappers=1 \
+            output/anime_phonk/VELOCITY_AWAKENING_PREVIEW.mp4
+
+      - name: Upload preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: EURO-ANIME-PHONK-PREVIEW
+          path: output/anime_phonk/
+          retention-days: 7
